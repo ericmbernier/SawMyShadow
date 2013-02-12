@@ -1,0 +1,35 @@
+<level>
+  <width>640</width>
+  <height>480</height>
+  <outdoorTileset set="tileset">
+    <tile tx="120" ty="0" x="60" y="450"/>
+    <tile tx="120" ty="0" x="30" y="450"/>
+    <tile tx="120" ty="0" x="0" y="450"/>
+    <tile tx="120" ty="0" x="630" y="450"/>
+    <tile tx="120" ty="0" x="600" y="450"/>
+    <tile tx="120" ty="0" x="570" y="450"/>
+    <tile tx="120" ty="0" x="90" y="450"/>
+    <tile tx="120" ty="0" x="540" y="450"/>
+  </outdoorTileset>
+  <entities>
+    <player x="32" y="416"/>
+    <apple x="192" y="408"/>
+    <apple x="248" y="392"/>
+    <apple x="304" y="384"/>
+    <apple x="360" y="384"/>
+    <apple x="456" y="416"/>
+    <apple x="408" y="392"/>
+    <door x="574" y="418"/>
+    <sign x="84" y="424" text="Will the others mock my work in math and physics
+you wondered? Well wonder no more, for you will be 
+praised for these apples!"/>
+  </entities>
+  <floors>
+    <rect x="0" y="0" w="8" h="456"/>
+    <rect x="8" y="448" w="112" h="8"/>
+    <rect x="112" y="456" w="8" h="24"/>
+    <rect x="536" y="448" w="104" h="8"/>
+    <rect x="536" y="456" w="8" h="24"/>
+    <rect x="632" y="0" w="8" h="448"/>
+  </floors>
+</level>

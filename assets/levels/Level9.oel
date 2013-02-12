@@ -1,0 +1,41 @@
+<level>
+  <width>640</width>
+  <height>480</height>
+  <outdoorTileset set="tileset">
+    <tile tx="120" ty="0" x="0" y="450"/>
+    <tile tx="120" ty="0" x="30" y="450"/>
+    <tile tx="120" ty="0" x="60" y="450"/>
+    <tile tx="120" ty="0" x="90" y="450"/>
+    <tile tx="120" ty="0" x="120" y="450"/>
+    <tile tx="120" ty="0" x="150" y="450"/>
+    <tile tx="120" ty="0" x="180" y="450"/>
+    <tile tx="120" ty="0" x="210" y="450"/>
+    <tile tx="120" ty="0" x="240" y="450"/>
+    <tile tx="120" ty="0" x="270" y="450"/>
+    <tile tx="120" ty="0" x="300" y="450"/>
+    <tile tx="120" ty="0" x="330" y="450"/>
+    <tile tx="120" ty="0" x="360" y="450"/>
+    <tile tx="120" ty="0" x="390" y="450"/>
+    <tile tx="120" ty="0" x="420" y="450"/>
+    <tile tx="120" ty="0" x="450" y="450"/>
+    <tile tx="120" ty="0" x="480" y="450"/>
+    <tile tx="120" ty="0" x="510" y="450"/>
+    <tile tx="120" ty="0" x="540" y="450"/>
+    <tile tx="120" ty="0" x="570" y="450"/>
+    <tile tx="120" ty="0" x="600" y="450"/>
+    <tile tx="120" ty="0" x="630" y="450"/>
+  </outdoorTileset>
+  <entities>
+    <tree x="502" y="370"/>
+    <apple x="502" y="370"/>
+    <player x="16" y="416"/>
+    <sign x="125" y="424" text="Town is right past that tree, Sir Isaac.
+Take your time, thou has earned it. 
+The world is going to cherish the ground thou walks on!"/>
+  </entities>
+  <floors>
+    <rect x="0" y="0" w="8" h="456"/>
+    <rect x="8" y="448" w="632" h="8"/>
+    <rect x="632" y="0" w="8" h="448"/>
+  </floors>
+</level>

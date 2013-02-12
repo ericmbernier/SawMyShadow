@@ -1,0 +1,45 @@
+<level>
+  <width>640</width>
+  <height>480</height>
+  <outdoorTileset set="tileset">
+    <tile tx="120" ty="0" x="0" y="450"/>
+    <tile tx="120" ty="0" x="30" y="450"/>
+    <tile tx="120" ty="0" x="60" y="450"/>
+    <tile tx="120" ty="0" x="210" y="450"/>
+    <tile tx="120" ty="0" x="300" y="450"/>
+    <tile tx="120" ty="0" x="330" y="450"/>
+    <tile tx="120" ty="0" x="360" y="450"/>
+    <tile tx="120" ty="0" x="390" y="450"/>
+    <tile tx="120" ty="0" x="480" y="450"/>
+    <tile tx="120" ty="0" x="510" y="450"/>
+    <tile tx="120" ty="0" x="540" y="450"/>
+    <tile tx="120" ty="0" x="570" y="450"/>
+    <tile tx="120" ty="0" x="600" y="450"/>
+    <tile tx="120" ty="0" x="630" y="450"/>
+    <tile tx="120" ty="0" x="90" y="450"/>
+    <tile tx="120" ty="0" x="120" y="450"/>
+    <tile tx="120" ty="0" x="150" y="450"/>
+    <tile tx="120" ty="0" x="180" y="450"/>
+  </outdoorTileset>
+  <entities>
+    <player x="24" y="416"/>
+    <apple x="352" y="408"/>
+    <tree x="576" y="368"/>
+    <sign x="120" y="424" text="Thou has made an amazing discovery!
+Eating apples helps thou temporarily defy gravity!
+Quick, runeth off and tell the others!" />
+    <door x="520" y="416"/>
+    <tree x="166" y="368"/>
+  </entities>
+  <floors>
+    <rect x="0" y="0" w="8" h="456"/>
+    <rect x="8" y="448" w="232" h="8"/>
+    <rect x="232" y="456" w="8" h="24"/>
+    <rect x="296" y="448" w="128" h="8"/>
+    <rect x="296" y="456" w="8" h="24"/>
+    <rect x="416" y="456" w="8" h="24"/>
+    <rect x="480" y="448" w="160" h="8"/>
+    <rect x="480" y="456" w="8" h="24"/>
+    <rect x="632" y="0" w="8" h="448"/>
+  </floors>
+</level>
