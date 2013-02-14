@@ -26,7 +26,7 @@ package com.shadow
 		[Embed(source = '../assets/graphics/titleLogo.png')] public static const TITLE_LOGO:Class;
 		[Embed(source = '../assets/graphics/credits.png')] public static const TITLE_CREDITS_BG:Class;
 		[Embed(source = '../assets/graphics/buffer.png')] public static const TITLE_BUFFER:Class;
-		[Embed(source = '../assets/graphics/isaacNewton.png')] public static const TITLE_ISAAC_NEWTON:Class;
+		[Embed(source = '../assets/graphics/titleGroundhog.png')] public static const TITLE_GROUNDHOG:Class;
 		
 		// Ending
 		[Embed(source = '../assets/graphics/endingScreen.png')] public static const END_SCREEN:Class;

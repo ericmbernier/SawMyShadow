@@ -85,7 +85,7 @@ package com.shadow.worlds
 				{
 					var bufferImg:Image = new Image(FP.buffer);
 					FP.world.removeAll();
-					FP.world = new TransitionWorld(TitleWorld, bufferImg, Global.CIRCLE);
+					FP.world = new TransitionWorld(TitleWorld, bufferImg, Global.TRANSITION_STAR);
 				}
 			}
 			else
@@ -147,7 +147,7 @@ package com.shadow.worlds
 			Global.tvBgEntity.layer = -99999
 			this.add(Global.tvBgEntity);
 
-			var file:ByteArray = new com.shadow.Assets[Global.level - 1];
+			var file:ByteArray = new Assets.LEVELS[Global.level - 1];
 			var str:String = file.readUTFBytes( file.length );
 			var xml:XML = new XML(str);
 

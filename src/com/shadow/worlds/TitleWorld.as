@@ -44,19 +44,19 @@ package com.shadow.worlds
 		
 		private var darkScreen_:Image = Image.createRect(Global.GAME_WIDTH, Global.GAME_HEIGHT, 0x000000, 0);
 		private var creditsBg_:Image = new Image(Assets.TITLE_CREDITS_BG, null);
-		private var isaacNewton_:Image = new Image(Assets.TITLE_ISAAC_NEWTON);
+		private var groundHog_:Image = new Image(Assets.TITLE_GROUNDHOG);
 		
 		// Text on the main menu screen
-		private var playGameTxt_:Text = new Text("Play Game", 0, 20, {size:28, color:0xFFFFFF, font:"Essays", outlineColor:0x000000, outlineStrength:2});
-		private var playGameTxtHover_:Text = new Text("Play Game", 0, 20, {size:28, color:0xFFFFFF, font:"Essays", outlineColor:0x000000, outlineStrength:2});
-		private var creditsTxt_:Text = new Text("Credits", 0, 20, {size:28, color:0xFFFFFF, font:"Essays", outlineColor:0x000000, outlineStrength:2});
-		private var creditsTxtHover_:Text = new Text("Credits", 0, 20, {size:28, color:0xFFFFFF, font:"Essays", outlineColor:0x000000, outlineStrength:2});
-		private var backTxt_:Text = new Text("Back", 0, 20, {size:28, color:0xFFFFFF, font:"Essays", outlineColor:0x000000, outlineStrength:2});
-		private var backTxtHover_:Text = new Text("Back", 0, 20, {size:28, color:0xFFFFFF, font:"Essays", outlineColor:0x000000, outlineStrength:2});
-		private var gameByTxt_:Text = new Text("A Game by Eric Bernier", 0, 10, {size:18, color:0xFFFFFF, 
-			font:"Essays", outlineColor:0x000000, outlineStrength:2});
-		private var levelSelTxt_:Text = new Text("Select Your Level!", 220, 150, {size:26, color:0xFFFFFF, visible:false,
-			font:"Essays", outlineColor:0x000000, outlineStrength:2});
+		private var playGameTxt_:Text = new Text("Play Game", 0, 20, {size:40, color:0xFFFFFF, font:"Rumpel", outlineColor:0x000000, outlineStrength:4});
+		private var playGameTxtHover_:Text = new Text("Play Game", 0, 20, {size:40, color:0xFFFFFF, font:"Rumpel", outlineColor:0x000000, outlineStrength:4});
+		private var creditsTxt_:Text = new Text("Credits", 0, 20, {size:40, color:0xFFFFFF, font:"Rumpel", outlineColor:0x000000, outlineStrength:4});
+		private var creditsTxtHover_:Text = new Text("Credits", 0, 20, {size:40, color:0xFFFFFF, font:"Rumpel", outlineColor:0x000000, outlineStrength:4});
+		private var backTxt_:Text = new Text("Back", 0, 20, {size:28, color:0xFFFFFF, font:"Rumpel", outlineColor:0x000000, outlineStrength:2});
+		private var backTxtHover_:Text = new Text("Back", 0, 20, {size:28, color:0xFFFFFF, font:"Rumpel", outlineColor:0x000000, outlineStrength:2});
+		private var gameByTxt_:Text = new Text("A Game by Eric Bernier", 0, 0, {size:23, color:0xFFFFFF, 
+			font:"Rumpel", outlineColor:0x000000, outlineStrength:2});
+		private var levelSelTxt_:Text = new Text("Select Your Level!", 70, 150, {size:26, color:0xFFFFFF, visible:false,
+			font:"Rumpel", outlineColor:0x000000, outlineStrength:2});
 		
 		// Buttons on the title screen
 		private var playGameBtn_:TextButton;
@@ -87,15 +87,18 @@ package com.shadow.worlds
 			
 			Global.paused = false;
 			
-			titleLogo_.x = 140;
+			gameByTxt_.x = 65;
+			gameByTxt_.y = 10;
+			titleLogo_.x = 15;
 			titleLogo_.y = 40;
 			
 			this.addGraphic(titleBg_);
 			this.addGraphic(titleLogo_);
-			this.addGraphic(isaacNewton_);
+			this.addGraphic(gameByTxt_);
+			this.addGraphic(groundHog_);
 			
-			isaacNewton_.x = 225;
-			isaacNewton_.y = 110;
+			groundHog_.x = 225;
+			groundHog_.y =110;
 			
 			// Initialize and set all of the text on the main screen
 			playGameTxt_.width = FP.width;
@@ -108,20 +111,15 @@ package com.shadow.worlds
 			creditsTxtHover_.width = FP.width;
 			creditsTxtHover_.y -=  28;
 			
-			gameByTxt_.centerOO();
-			gameByTxt_.width = FP.width;
-			gameByTxt_.x = FP.halfWidth;
-			this.addGraphic(gameByTxt_);
-			
 			// Initialize all of the buttons on the main menu
-			playGameBtn_ = new TextButton(playGameTxt_, 200, 430, 130, 30, startGame);
+			playGameBtn_ = new TextButton(playGameTxt_, 100, 180, 155, 46, startGame);
 			playGameBtn_.normal = playGameTxt_;
 			playGameBtn_.hover = playGameTxtHover_;
 			playGameBtn_.setRollOverSound(buttonHoverSnd_);
 			playGameBtn_.setSelectSound(buttonSelectSnd_);
 			this.add(playGameBtn_);
 			
-			creditsBtn_ = new TextButton(creditsTxt_, 350, 430, 90, 30, viewCredits);
+			creditsBtn_ = new TextButton(creditsTxt_, 125, 255, 110, 35, viewCredits);
 			creditsBtn_.normal = creditsTxt_;
 			creditsBtn_.hover = creditsTxtHover_;
 			creditsBtn_.setRollOverSound(buttonHoverSnd_);
@@ -131,7 +129,7 @@ package com.shadow.worlds
 			this.addGraphic(darkScreen_);
 			this.addGraphic(levelSelTxt_);
 			
-			creditsBg_.x = 85;
+			creditsBg_.x = 20;
 			creditsBg_.y = Global.GAME_HEIGHT + 15;
 			this.addGraphic(creditsBg_);
 			
@@ -141,7 +139,7 @@ package com.shadow.worlds
 			unmuteHover_.scale = 1.025;
 			unmuteHover_.updateBuffer();
 			
-			Global.muteBtn = new Button(4, 0, 26, 26, mute);
+			Global.muteBtn = new Button(620, 0, 26, 26, mute);
 			
 			if (Global.soundVolume > 0)
 			{
@@ -207,12 +205,11 @@ package com.shadow.worlds
 			
 			playGameBtn_.visible = false;
 			creditsBtn_.visible = false;
-			isaacNewton_.visible = false;
 			
 			var levelsToAdd:int =  Global.shared.data.level; // Global.NUM_LEVELS;
 			var lockedLevels:int = Global.NUM_LEVELS - levelsToAdd;
 			
-			var xBuffer:int = 260;
+			var xBuffer:int = 110;
 			var yBuffer:int = 200;
 			var bobUp:Boolean = true;
 			levelSelectEntities_ = new Array();
@@ -236,12 +233,12 @@ package com.shadow.worlds
 				var levelTxt:Text = new Text(levelNum.toString(), 0, 0, {outlineColor:0x000000, outlineStrength:2});
 				levelTxt.color = 0xFFFFFF;
 				levelTxt.size = 28;
-				levelTxt.font = "Essays";
+				levelTxt.font = "Rumpel";
 				
 				var levelTxtHover:Text = new Text(levelNum.toString(), 0, 0, {outlineColor:0x000000, outlineStrength:2});
 				levelTxtHover.color = 0xFFFFFF;
 				levelTxt.size = 28;
-				levelTxtHover.font = "Essays";
+				levelTxtHover.font = "Rumpel";
 				
 				var levelBtn:TextButton = new TextButton(levelTxt, xBuffer, yBuffer, 32, 32, null,
 					levelNum);
@@ -255,7 +252,7 @@ package com.shadow.worlds
 				var diff:int = i % 3;
 				if (diff == 2)
 				{
-					xBuffer = 260;
+					xBuffer = 110;
 					yBuffer += 45;
 				}
 				else
@@ -269,7 +266,7 @@ package com.shadow.worlds
 				var question:Text = new Text("?", 0, 0, {outlineColor:0x000000, outlineStrength:2});
 				question.color = 0xFFFFFF;
 				question.size = 28;
-				question.font = "Essays";
+				question.font = "Rumpel";
 				
 				var lockedBtn:TextButton = new TextButton(question, xBuffer, yBuffer, 32, 32);
 				lockedBtn.setHitbox(0, 0);
@@ -280,7 +277,7 @@ package com.shadow.worlds
 				var ldiff:int = i % 3;
 				if (ldiff == 2)
 				{
-					xBuffer = 260;
+					xBuffer = 110;
 					yBuffer += 45;
 				}
 				else
@@ -301,7 +298,7 @@ package com.shadow.worlds
 			backTxtHover_.width = FP.width;
 			backTxtHover_.y = 0;
 			
-			backBtn_ = new TextButton(backTxt_, 295, 415, 150, 30, backToTitle);
+			backBtn_ = new TextButton(backTxt_, 140, 330, 150, 30, backToTitle);
 			backBtn_.normal = backTxt_;
 			backBtn_.hover = backTxtHover_;
 			backBtn_.setHitbox(120, 30, 0, 0);
@@ -317,8 +314,8 @@ package com.shadow.worlds
 			viewingCredits_ = true;
 			viewingTitle_ = false;
 			
-			TweenMax.to(darkScreen_, 0.75, {alpha:0.75, repeat: 0, yoyo:false, ease:Quad.easeIn});
-			TweenMax.to(creditsBg_, 1.0, {y: 20, repeat:0, yoyo:false, ease:Back.easeOut});
+			TweenMax.to(darkScreen_, 0.75, {alpha:0.85, repeat: 0, yoyo:false, ease:Quad.easeIn});
+			TweenMax.to(creditsBg_, 1.0, {y: 65, repeat:0, yoyo:false, ease:Back.easeOut, onComplete:showBackBtn});
 			
 			if (backBtn_ != null)
 			{
@@ -335,13 +332,12 @@ package com.shadow.worlds
 			backTxtHover_.width = FP.width;
 			backTxtHover_.y = 0;
 			
-			backBtn_ = new TextButton(backTxt_, 260, 440, 110, 30, backToTitle);
+			backBtn_ = new TextButton(backTxt_, 160, 365, 110, 30, backToTitle);
 			backBtn_.normal = backTxt_;
 			backBtn_.hover = backTxtHover_;
 			backBtn_.setHitbox(120, 30);
 			backBtn_.setRollOverSound(buttonHoverSnd_);
 			backBtn_.setSelectSound(buttonBackSnd_);
-			this.add(backBtn_);
 		}
 		
 		
@@ -371,7 +367,7 @@ package com.shadow.worlds
 			{
 				playGameBtn_.visible = true;
 				creditsBtn_.visible = true;
-				isaacNewton_.visible = true;
+				groundHog_.visible = true;
 				levelSelTxt_.visible = false;
 				viewingLevelSelect_ = false;
 				
@@ -440,6 +436,12 @@ package com.shadow.worlds
 		{	
 			var url:String = new String("http://www.ericbernier.com");
 			navigateToURL(new URLRequest(url));
+		}
+		
+		
+		private function showBackBtn():void
+		{
+			this.add(backBtn_);
 		}
 	}
 }

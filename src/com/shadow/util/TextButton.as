@@ -213,7 +213,7 @@ package com.shadow.util
 					Global.level = levelNum_ - 1;
 					var bufferImg:Image = new Image(FP.buffer);
 					FP.world.removeAll();
-					FP.world = new TransitionWorld(GameWorld, bufferImg, Global.CIRCLE);
+					FP.world = new TransitionWorld(GameWorld, bufferImg, Global.TRANSITION_STAR);
 				}
 				else
 				{

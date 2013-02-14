@@ -44,7 +44,7 @@ package com.shadow.worlds
 			{
 				switch (transitionType_)
 				{
-					case Global.FLIP_SCREEN:
+					case Global.TRANSITION_FLIP_SCREEN:
 					{
 						Transition.to(goto_, 
 							new FlipOut({duration:0.75}), 
@@ -52,22 +52,23 @@ package com.shadow.worlds
 						
 						break;
 					}
-					case Global.CIRCLE:
+					case Global.TRANSITION_CIRCLE:
 					{
 						Transition.to(goto_, 
 							new CircleIn({duration:1}), 
-							new CircleOut({duration:0.5})
-						);
+							new CircleOut({duration:0.5}));
 						
 						break;
 					}
-					case Global.STAR:
+					case Global.TRANSITION_STAR:
 					{
-
+						Transition.to(goto_, 
+							new StarIn({duration:1}), 
+							new StarOut({duration:0.5}));
 						
 						break;
 					}
-					case Global.FADE:
+					case Global.TRANSITION_FADE:
 					{
 						
 						break;

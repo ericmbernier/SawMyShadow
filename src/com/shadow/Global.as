@@ -62,7 +62,6 @@ package com.shadow
 			keyX:int = Key.X,
 			keyZ:int = Key.Z,
 			
-			
 			appleMeter:AppleMeter,
 			appleVal:int = 0,			
 			hud:HUD,			
@@ -99,10 +98,10 @@ package com.shadow
 			UP:int = 2,
 			DOWN:int = 3,
 			
-			FLIP_SCREEN:uint = 0,
-			CIRCLE:uint = 1,
-			STAR:uint = 2,
-			FADE:uint = 3,
+			TRANSITION_FLIP_SCREEN:uint = 0,
+			TRANSITION_CIRCLE:uint = 1,
+			TRANSITION_STAR:uint = 2,
+			TRANSITION_FADE:uint = 3,
 			
 			// Suggested: Music 55, Sound 85
 			DEFAULT_MUSIC_VOLUME:Number = 0.40,

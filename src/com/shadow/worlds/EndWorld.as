@@ -48,7 +48,7 @@ package com.shadow.worlds
 		private function goToTitle():void
 		{
 			var screen:Image = new Image(FP.buffer);
-			FP.world = new TransitionWorld(TitleWorld, screen, Global.CIRCLE);
+			FP.world = new TransitionWorld(TitleWorld, screen, Global.TRANSITION_STAR);
 		}
 	}
 }

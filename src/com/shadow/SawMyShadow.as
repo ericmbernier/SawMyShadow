@@ -27,9 +27,9 @@ package com.shadow
 	 * @author Eric Bernier <http://www.ericbernier.com>
 	 * Based on the preloader by Draknet on the flashpunk.net forums
 	 */
-	public class SirIsaac extends Sprite
+	public class SawMyShadow extends Sprite
 	{
-		private static const mainClassName: String = "com.newton.Main";
+		private static const mainClassName: String = "com.shadow.Main";
 		
 		private static const WIDTH:uint = 640;
 		private static const HEIGHT:uint = 480;
@@ -43,7 +43,7 @@ package com.shadow
 		private static const PROGRESS_BAR_HEIGHT:uint = 17;
 		private static const PROG_BAR_X:uint = 134;
 		
-		[Embed(source = 'assets/fonts/Essays1743.ttf', embedAsCFF="false", fontFamily = 'Essays')]
+		[Embed(source = 'assets/fonts/Rumpelstiltskin.ttf', embedAsCFF="false", fontFamily = 'Rumpel')]
 		private static const FONT:Class;
 		
 		[Embed("assets/graphics/preloaderBg.png")] private var bgPattern:Class;
@@ -61,6 +61,8 @@ package com.shadow
 		
 		[Embed("assets/graphics/playButton.png")] private var playBtn:Class;
 		private var playBtn_:Bitmap = new playBtn;
+		[Embed("assets/graphics/playButtonHover.png")] private var playBtnHover:Class;
+		private var playBtnHover_:Bitmap = new playBtnHover;
 		private var playBtnClip_:MovieClip = new MovieClip();
 		
 		private var progressBar:Shape;
@@ -87,7 +89,7 @@ package com.shadow
 		private var playBtnLoaded_:Boolean = false;
 
 				
-		public function SirIsaac()
+		public function SawMyShadow()
 		{	
 			// Log the entry to PlayTomic
 			// Log.View(PT_SWF_ID:int, PT_GUID:string, PT_API:string, root.loaderInfo.loaderURL);
@@ -114,17 +116,23 @@ package com.shadow
 			logo_.y = 125;
 			TweenMax.from(logo_, 0.85, {y: -200, ease:Bounce.easeOut, delay:0, onComplete:null});		
 
-			this.addChild(oneGameLogo_);
 			oneGameLogo_.scaleX = 0.65;
 			oneGameLogo_.scaleY = 0.65;
 			oneGameLogo_.x = 75;
 			oneGameLogo_.y = 5;
 			TweenMax.from(oneGameLogo_, 1.1, {y: -200, ease:Cubic.easeOut, delay:0, onComplete:setupButtons});
 			
-			this.addChild(ebLogo_);
+			oneGameClip_.addChild(oneGameLogo_);
+			oneGameClip_.buttonMode = true;
+			this.addChild(oneGameClip_);
+			
 			ebLogo_.x = 215;
 			ebLogo_.y = 325;
 			TweenMax.from(ebLogo_, 1.1, {y: 490, ease:Cubic.easeOut, delay:0, onComplete:null});
+			
+			ebClip_.addChild(ebLogo_);
+			ebClip_.buttonMode = true;
+			this.addChild(ebClip_);
 						
 			px = (sw - w) * 0.5;
 			py = (sh - h) * 0.5 + 50;
@@ -167,12 +175,19 @@ package com.shadow
 						progressBar.x = 800;
 						TweenMax.from(progressBar, 0.75, {x:175, ease:null, delay:0, onComplete:null});
 						
-						playBtn_.x = 265;
-						playBtn_.y = 185;
+						playBtn_.x = 270;
+						playBtn_.y = 205;
+						playBtnHover_.x = 270;
+						playBtnHover_.y = 205;
 						TweenMax.from(playBtn_, 0.75, {x: -215, ease:Back.easeOut, delay:0, onComplete:null});
 						
 						playBtnClip_.addChild(playBtn_);
-						playBtnClip_.addEventListener(MouseEvent.CLICK, onMouseDown);
+						playBtnClip_.buttonMode = true;
+						playBtnClip_.addEventListener(MouseEvent.CLICK, onMouseClick);
+						playBtnClip_.addEventListener(MouseEvent.MOUSE_DOWN, onMouseDown);
+						playBtnClip_.addEventListener(MouseEvent.MOUSE_UP, onMouseUp);
+						playBtnClip_.addEventListener(MouseEvent.MOUSE_OVER, onMouseOver);
+						playBtnClip_.addEventListener(MouseEvent.MOUSE_OUT, onMouseOut);
 						this.addChild(playBtnClip_);
 						
 						playBtnLoaded_ = true;
@@ -198,14 +213,40 @@ package com.shadow
 		}
 		
 		
-		private function onMouseDown(e:MouseEvent):void 
-		{
+		private function onMouseClick(e:MouseEvent):void 
+		{			
 			if (hasLoaded())
 			{
 				playGame();
 			}
 		}
 		
+		
+		private function onMouseDown(e:MouseEvent):void
+		{
+			playBtnClip_.removeChildren(0);
+			playBtnClip_.addChild(playBtn_);
+		}
+		
+		
+		private function onMouseUp(e:MouseEvent):void
+		{
+			playBtnClip_.removeChildren(0);
+			playBtnClip_.addChild(playBtn_);
+		}
+		
+		
+		private function onMouseOver(e:MouseEvent):void
+		{
+			playBtnClip_.removeChildren(0);
+			playBtnClip_.addChild(playBtnHover_);
+		}
+		
+		private function onMouseOut(e:MouseEvent):void
+		{
+			playBtnClip_.removeChildren(0);
+			playBtnClip_.addChild(playBtn_);
+		}
 		
 		private function playGame (): void 
 		{	
