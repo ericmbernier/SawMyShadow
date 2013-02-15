@@ -1,6 +1,5 @@
 package com.shadow 
 {
-	import com.shadow.entities.AppleMeter;
 	import com.shadow.entities.Door;
 	import com.shadow.entities.HUD;
 	import com.shadow.entities.PausedScreen;
@@ -62,8 +61,7 @@ package com.shadow
 			keyX:int = Key.X,
 			keyZ:int = Key.Z,
 			
-			appleMeter:AppleMeter,
-			appleVal:int = 0,			
+			flowerVal:int = 0,			
 			hud:HUD,			
 			
 			player:Player,
@@ -118,16 +116,16 @@ package com.shadow
 			
 			PLAYER_DEATH_HEIGHT:uint = 525,
 			
-            APPLE_TYPE:String = "APPLE",
 			DIRECTION_SIGN_TYPE = "DIRECTION_SIGN",
 			ENEMY_TYPE:String = "ENEMY",			
+			FLOWER_TYPE:String = "FLOWER",
 			GROUND_TYPE:String = "GROUND",
 			DOOR_KEY_TYPE:String = "KEY",
 			PLATFORM_HORIZONTAL:String = "PLATFORM_HORIZONTAL",
 			PLAYER_TYPE:String = "PLAYER",						
 			SOLID_TYPE:String = "SOLID",
 
-			SHARED_OBJECT:String = "SIR_ISAAC_EB_SO",
+			SHARED_OBJECT:String = "SAW_MY_SHADOW_EB_SO",
 			shared:SharedObject;
 			
 		public static const grid:int = 30;

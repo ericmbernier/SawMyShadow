@@ -215,7 +215,7 @@ package com.shadow.worlds
 			
 			for each (o in xml.entities[0].apple) 
 			{
-				add(new Apple(o.@x, o.@y));
+				add(new Flower(o.@x, o.@y));
 			}
 			
 			directionsArray_ = new Array();
@@ -237,9 +237,6 @@ package com.shadow.worlds
 				sponsorLogoBtn.layer = -999;
 			}
 			
-			Global.appleMeter = new AppleMeter();
-			add(Global.appleMeter);
-			
 			Global.hud = new HUD();
 			this.add(Global.hud);
 			
@@ -252,7 +249,7 @@ package com.shadow.worlds
 		public function nextlevel():void
 		{
 			removeAll();
-			Global.appleVal = 0;
+			Global.flowerVal = 0;
 			
 			if(Global.level < Assets.LEVELS.length) 
 			{	

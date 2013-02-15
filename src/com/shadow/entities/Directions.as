@@ -19,10 +19,7 @@ package com.shadow.entities
 		
 		
 		public function Directions(xCoord:int, yCoord:int, directions:String)
-		{
-			dirBg_.scaleX = 0.67;
-			dirBg_.scaleY = 0.33;
-			
+		{	
 			x = xCoord;
 			y = yCoord;
 			

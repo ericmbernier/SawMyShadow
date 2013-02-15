@@ -24,22 +24,22 @@ package com.shadow.entities
 	 *
 	 * @author Eric Bernier <http://www.ericbernier.com>
 	 */
-	public class Apple extends Entity
+	public class Flower extends Entity
 	{			
         private const WIDTH:uint = 24;
         private const HEIGHT:uint = 24;
     
-		private var image_:Image = new Image(Assets.APPLE);			
+		private var image_:Image = new Image(Assets.FLOWER);			
 		private var appleSnd_:Sfx = new Sfx(Assets.SND_APPLE);
 		private var appleHurtSnd_:Sfx = new Sfx(Assets.SND_APPLE_HURT);
 	
 
-		public function Apple(xCoord:int, yCoord:int)
+		public function Flower(xCoord:int, yCoord:int)
 		{	
 			this.x = xCoord;
 			this.y = yCoord;
 			
-			this.type = Global.APPLE_TYPE;	
+			this.type = Global.FLOWER_TYPE;	
 
 			this.graphic = image_;
 			
@@ -86,7 +86,7 @@ package com.shadow.entities
 
 		public function collect():void
 		{	
-            Global.appleVal += 1;
+            Global.flowerVal += 1;
             
             world.add(new Particle(x, y, .5, .5, .1, 0xF3232D));
             world.add(new Particle(x + 5, y + 5, .5, .5, .1, 0xF3232D));

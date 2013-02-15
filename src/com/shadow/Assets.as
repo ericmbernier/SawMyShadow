@@ -54,10 +54,10 @@ package com.shadow
         [Embed(source = '../assets/graphics/door.png')] public static const OBJECT_DOOR:Class;
 		
 		// Collectables
-		[Embed(source = '../assets/graphics/apple.png')] public static const APPLE:Class;
+		[Embed(source = '../assets/graphics/flower.png')] public static const FLOWER:Class;
 		
 		// Player
-		[Embed(source = '../assets/graphics/newtonSprite.png')] public static const NEWTON:Class;
+		[Embed(source = '../assets/graphics/groundhogSprite.png')] public static const GROUNDHOG:Class;
 		
 		// Effects
 		[Embed(source = '../assets/graphics/newtonBlur.png')] public static const EFFECTS_DASH_BLUR:Class;

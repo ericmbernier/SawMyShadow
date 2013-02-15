@@ -21,21 +21,21 @@ package com.shadow.entities
 		private var pausedScreen_:Image = Image.createRect(Global.GAME_WIDTH, Global.GAME_HEIGHT, 
 			0x000000, 0);
 		private var pTxt_:Text = new Text("P ", 0, 0, {size:40, outlineColor:0x000000, 
-			outlineStrength:3, visible:true, font:"Essays"});
+			outlineStrength:3, visible:true, font:"Rumpel"});
 		private var aTxt_:Text = new Text("A ", 0, 0, {size:40, outlineColor:0x000000, 
-			outlineStrength:3, visible:true, font:"Essays"});
+			outlineStrength:3, visible:true, font:"Rumpel"});
 		private var uTxt_:Text = new Text("U ", 0, 0, {size:40, outlineColor:0x000000, 
-			outlineStrength:3, visible:true, font:"Essays"});
+			outlineStrength:3, visible:true, font:"Rumpel"});
 		private var sTxt_:Text = new Text("S ", 0, 0, {size:40, outlineColor:0x000000, 
-			outlineStrength:3, visible:true, font:"Essays"});
+			outlineStrength:3, visible:true, font:"Rumpel"});
 		private var eTxt_:Text = new Text("E ", 0, 0, {size:40, outlineColor:0x000000, 
-			outlineStrength:3, visible:true, font:"Essays"});
+			outlineStrength:3, visible:true, font:"Rumpel"});
 		private var dTxt_:Text = new Text("D ", 0, 0, {size:40, outlineColor:0x000000, 
-			outlineStrength:3, visible:true, font:"Essays"});
+			outlineStrength:3, visible:true, font:"Rumpel"});
 		private var enterTxt_:Text = new Text("Press ENTER to resume", 0, 0, {size:24, 
-			outlineColor:0x000000, outlineStrength:3, visible:true, font:"Essays"});
+			outlineColor:0x000000, outlineStrength:3, visible:true, font:"Rumpel"});
 		private var quitTxt_:Text = new Text("Press Q to quit", 0, 0, {size:24, 
-			outlineColor:0x000000, outlineStrength:3, visible:true, font:"Essays"});
+			outlineColor:0x000000, outlineStrength:3, visible:true, font:"Rumpel"});
 		
 		private var gfx_:Graphiclist;
 

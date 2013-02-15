@@ -24,13 +24,13 @@ package com.shadow.entities
 	 */
 	public class Player extends Physics
 	{	
-		private const WIDTH:int = 32;
-		private const HEIGHT:int = 32;
+		private const WIDTH:int = 30;
+		private const HEIGHT:int = 30;
 		private const APPLE_JUMP:int = 25;
 		private const JUMP:int = 8;
 		private const ENDING_X:int = 498;
 		
-		private var sprite:Spritemap = new Spritemap(Assets.NEWTON, WIDTH, HEIGHT, null);
+		private var sprite:Spritemap = new Spritemap(Assets.GROUNDHOG, WIDTH, HEIGHT, null);
 		private var movement:Number = 1;
 		
 		// Current player direction (true = right, false = left)
@@ -46,11 +46,11 @@ package com.shadow.entities
 		private var deathSnd_:Sfx = new Sfx(Assets.SND_BUTTON_SELECT);
 		
 		
-		public function Player(x:int, y:int) 
+		public function Player(xCoord:int, yCoord:int) 
 		{
-			// Set position
-			super(x, y);
-			start = new Point(x, y);
+			yCoord += 4;
+			super(xCoord, yCoord);
+			start = new Point(xCoord, yCoord);
 			type = Global.PLAYER_TYPE;
 			
 			// Set different speeds and such
@@ -59,19 +59,15 @@ package com.shadow.entities
 			friction_ = new Point(0.5, 0.5);
 			
 			// Set up animations
-			sprite.add("standLeft", [0, 12], 1, true);
-			sprite.add("standRight", [0, 12], 1, true);
-			sprite.add("idleRight", [0], 1, true);
-			sprite.add("walkLeft", [0, 4, 8, 12, 1], 8, true);
-			sprite.add("walkRight", [0, 4, 8, 12, 1], 8, true);
+			sprite.add("stand", [0, 1], 6, true);
+			sprite.add("idle", [0, 1], 6, true);
+			sprite.add("walk", [4, 5, 6, 7], 10, true);
+			sprite.add("jump", [1], 0, false);
 			
-			sprite.add("jumpLeft", [1], 0, false);
-			sprite.add("jumpRight", [1], 0, false);
-			
-			sprite.play("standRight");
+			sprite.play("stand");
 			
 			// Set hitbox & graphic
-			this.setHitbox(25, 25, 0, -5);
+			this.setHitbox(25, 25, 0, -4);
 			graphic = sprite;
 		}
 		
@@ -80,7 +76,7 @@ package com.shadow.entities
 		{
 			if (ending_)
 			{
-				sprite.play("idleRight");
+				sprite.play("idle");
 				return;
 			}
 			else if (sprite.alpha < 1) 
@@ -166,49 +162,19 @@ package com.shadow.entities
 			// Set the sprites according to if we're on the ground, and if we are moving or not
 			if (onGround_)
 			{
-				if (speed_.x < 0) 
+				if (speed_.x < 0 || speed_.x > 0) 
 				{ 
-					sprite.play("walkLeft"); 
-				}
-				
-				if (speed_.x > 0) 
-				{ 
-					sprite.play("walkRight"); 
+					sprite.play("walk"); 
 				}
 				
 				if (speed_.x == 0) 
 				{
-					if (direction_) 
-					{
-						sprite.play("standRight"); 
-					} 
-					else 
-					{ 
-						sprite.play("standLeft"); 
-					}
+					sprite.play("stand"); 
 				}
 			}
 			else 
-			{
-				if (direction_) 
-				{ 
-					sprite.play("jumpRight"); 
-				} 
-				else 
-				{ 
-					sprite.play("jumpLeft"); 
-				}
-				
-				// Are we sliding on a wall?
-				if (collide(Global.SOLID_TYPE, x - 1, y)) 
-				{ 
-					sprite.play("slideRight"); 
-				}
-				
-				if (collide(Global.SOLID_TYPE, x + 1, y)) 
-				{ 
-					sprite.play("slideLeft"); 
-				}
+			{ 
+				sprite.play("jump"); 
 			}
 
 			// Set the motion. We set this later so it stops all movement if we should be stopped
@@ -229,7 +195,7 @@ package com.shadow.entities
 				sprite.flipped = false;
 			}
 			
-			this.collectApples();
+			this.collectFlowers();
 			
 			// Check if the game is ending. This is quite the hack, and if I wanted to
 			// take the time I would have created an EndingWorld that handled all of this better
@@ -258,7 +224,7 @@ package com.shadow.entities
 			FP.world.remove(this);
 			
 			deathSnd_.play(Global.soundVolume);
-			Global.appleVal = 0;
+			Global.flowerVal = 0;
 			Global.restart = true;
 		}
 		
@@ -275,14 +241,14 @@ package com.shadow.entities
 		}
 
         
-		private function collectApples():void
+		private function collectFlowers():void
 		{
-			var apple:Apple = collide(Global.APPLE_TYPE, x, y) as Apple;
+			var flower:Flower = collide(Global.FLOWER_TYPE, x, y) as Flower;
 			
-			if (apple)
+			if (flower)
 			{
 				apples_ = true;
-				apple.collect();
+				flower.collect();
 			}
 		}
 		
@@ -301,11 +267,11 @@ package com.shadow.entities
 		
 			world.add(new Blur(x, y + HEIGHT, direction_));
 			
-			Global.appleVal -= 1;
+			Global.flowerVal -= 1;
 			
-			if (Global.appleVal <= 0 )
+			if (Global.flowerVal <= 0 )
 			{
-				Global.appleVal = 0;
+				Global.flowerVal = 0;
 				apples_ = false;
 			}
 			
