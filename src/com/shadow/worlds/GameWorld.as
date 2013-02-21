@@ -119,8 +119,8 @@ package com.shadow.worlds
 				}
 			}
 			
-			Global.bg.x -= 0.25;
-			Global.bg.y -= 0.25;
+			// Global.bg.x -= 0.25;
+			// Global.bg.y -= 0.25;
 			
 			// Load next level upon previous level completion
 			if (Global.finished) 
@@ -140,12 +140,6 @@ package com.shadow.worlds
 			Global.bg = new Background();
 			Global.bgEntity = new Entity(0, 0, Global.bg);
 			this.add(Global.bgEntity);
-			
-			Global.tvBg = new Background(Global.TV_SCAN);
-			Global.tvBg.alpha = 0.05;
-			Global.tvBgEntity = new Entity(0, 0, Global.tvBg);
-			Global.tvBgEntity.layer = -99999
-			this.add(Global.tvBgEntity);
 
 			var file:ByteArray = new Assets.LEVELS[Global.level - 1];
 			var str:String = file.readUTFBytes( file.length );

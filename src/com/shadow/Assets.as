@@ -36,10 +36,7 @@ package com.shadow
 		[Embed(source = '../assets/graphics/slope1.png')] public static const TILESET_SLOPE_1:Class;
 		[Embed(source = '../assets/graphics/slope2.png')] public static const TILESET_SLOPE_2:Class;
 		[Embed(source = '../assets/graphics/slope3.png')] public static const TILESET_SLOPE_3:Class;
-		[Embed(source = '../assets/graphics/slope4.png')] public static const TILESET_SLOPE_4:Class;
-		
-		// HUD
-		[Embed(source = '../assets/graphics/appleMeter.png')] public static const APPLE_METER:Class;		
+		[Embed(source = '../assets/graphics/slope4.png')] public static const TILESET_SLOPE_4:Class;	
 		
 		// Gameworld graphics
 		[Embed(source = '../assets/graphics/mute.png')] public static const MUTE_BTN:Class;
@@ -51,7 +48,8 @@ package com.shadow
 		[Embed(source = '../assets/graphics/tree.png')] public static const TREE:Class;
 		
 		// Platforms and Objects     
-        [Embed(source = '../assets/graphics/door.png')] public static const OBJECT_DOOR:Class;
+		[Embed(source = '../assets/graphics/door.png')] public static const OBJECT_CRATE:Class;
+		[Embed(source = '../assets/graphics/door.png')] public static const OBJECT_DOOR:Class;
 		
 		// Collectables
 		[Embed(source = '../assets/graphics/flower.png')] public static const FLOWER:Class;

@@ -177,7 +177,7 @@ package com.shadow.entities
 					{
 						// Increase/decrease positions
 						// If the player is in the way don't move, but don't consider them stopped
-						if (!e.collide(Global.player.type, e.x + FP.sign(spdx), e.y - s) || enemy_) 
+						if (!e.collide(Global.PLAYER_TYPE, e.x + FP.sign(spdx), e.y - s) || enemy_) 
 						{ 
 							e.x += FP.sign(spdx);
 						}
@@ -227,7 +227,7 @@ package com.shadow.entities
 				{ 
 					// If we don't run into a player, then move us
 					// Note that we wont stop our movement if we hit a player.
-					if (!e.collide(Global.player.type, e.x, e.y + FP.sign(spdy))) 
+					if (!e.collide(Global.PLAYER_TYPE, e.x, e.y + FP.sign(spdy))) 
 					{ 
 						e.y += FP.sign(spdy); 
 					}

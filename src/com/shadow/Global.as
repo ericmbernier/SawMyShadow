@@ -38,6 +38,7 @@ package com.shadow
 			
 			newgame:Boolean = false,
 			loadgame:Boolean = false,
+			haveShadow:Boolean = false,
 			
 			menuMusic:Sfx = new Sfx(Assets.MUS_MENU),
 			gameMusic:Sfx = new Sfx(Assets.MUS_GAME),
@@ -60,6 +61,7 @@ package com.shadow
 			keyR:int = Key.R,
 			keyX:int = Key.X,
 			keyZ:int = Key.Z,
+			keySpace:int = Key.SPACE,
 			
 			flowerVal:int = 0,			
 			hud:HUD,			
@@ -122,7 +124,8 @@ package com.shadow
 			GROUND_TYPE:String = "GROUND",
 			DOOR_KEY_TYPE:String = "KEY",
 			PLATFORM_HORIZONTAL:String = "PLATFORM_HORIZONTAL",
-			PLAYER_TYPE:String = "PLAYER",						
+			PLAYER_TYPE:String = "PLAYER",
+			SHADOW_TYPE:String = "SHADOW",
 			SOLID_TYPE:String = "SOLID",
 
 			SHARED_OBJECT:String = "SAW_MY_SHADOW_EB_SO",
