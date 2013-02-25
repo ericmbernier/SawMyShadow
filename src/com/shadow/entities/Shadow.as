@@ -189,10 +189,9 @@ package com.shadow.entities
 			// Set the motion. We set this later so it stops all movement if we should be stopped
 			motion();
 			
-			// Check if we just died, either via enemy contact or falling to our death
-			if ((collide(Global.ENEMY_TYPE, x, y) && speed_.y > 0) || this.y >= Global.levelHeight)
+			if (this.y >= Global.levelHeight)
 			{
-				this.killMe();
+				FP.world.remove(this);
 			}
 			
 			if (!direction_)
@@ -214,44 +213,6 @@ package com.shadow.entities
 				}
 			}
 		}	
-		
-		
-		public function killMe():void
-		{
-			dead = true;
-			
-			world.add(new Particle(x, y + 30, .5, .5, .1, 0x8D2828));
-			world.add(new Particle(x + 5, y + 28 + 5, .5, .5, .1, 0x8D2828));
-			world.add(new Particle(x + 10, y + 25 - 5, .5, .5, .1, 0x8D2828));
-			world.add(new Particle(x, y + 20, .5, .5, .1, 0x8D2828));
-			world.add(new Particle(x + 33, y + 21 + 5, .5, .5, .1, 0x8D2828));
-			world.add(new Particle(x + 20, y + 22 - 5, .5, .5, .1, 0x8D2828));
-			
-			this.setHitbox(0, 0);
-			FP.world.remove(this);
-			
-			deathSnd_.play(Global.soundVolume);
-			Global.flowerVal = 0;
-			Global.restart = true;
-		}
-		
-		
-		public function animEnd():void 
-		{ 
-			// Do nothing
-		}
-		
-		
-		public function isDead():Boolean
-		{
-			return dead;
-		}
-		
-		
-		public function bounce():void
-		{
-			speed_.y = -JUMP * 1.5;
-		}
 		
 		
 		public function removeShadow():void

@@ -20,8 +20,8 @@ package com.shadow.worlds
 		private var endImg_:Image = new Image(Assets.END_SCREEN);
 		private var titleBtn_:TextButton;
 		
-		private var backTxt_:Text = new Text("Back To Title", 0, 0, {size:28, color:0xFFFFFF, font:"Essays", outlineColor:0x000000, outlineStrength:2});
-		private var backTxtHover_:Text = new Text("Back To Title", 0, 0, {size:28, color:0xFFFFFF, font:"Essays", outlineColor:0x000000, outlineStrength:2});
+		private var backTxt_:Text = new Text("Back To Title", 0, 0, {size:28, color:0xFFFFFF, font:"Rumpel", outlineColor:0x000000, outlineStrength:2});
+		private var backTxtHover_:Text = new Text("Back To Title", 0, 0, {size:28, color:0xFFFFFF, font:"Rumpel", outlineColor:0x000000, outlineStrength:2});
 		
 		private var buttonHoverSnd_:Sfx = new Sfx(Assets.SND_BUTTON_HOVER);
 		private var buttonSelectSnd_:Sfx = new Sfx(Assets.SND_BUTTON_SELECT);
@@ -35,7 +35,7 @@ package com.shadow.worlds
 			
 			Global.endMusic.loop(Global.musicVolume);
 			
-			titleBtn_ = new TextButton(backTxt_, 230, 395, 200, 30, goToTitle);
+			titleBtn_ = new TextButton(backTxt_, 260, 350, 200, 30, goToTitle);
 			titleBtn_.normal = backTxt_;
 			titleBtn_.hover = backTxtHover_;
 			titleBtn_.setRollOverSound(buttonHoverSnd_);

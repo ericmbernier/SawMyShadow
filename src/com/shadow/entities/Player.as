@@ -77,7 +77,7 @@ package com.shadow.entities
 			}
 			
 			// Check if the player either wants to spawn or destroy a shadow
-			if (Input.pressed(Global.keySpace))
+			if (Input.pressed(Global.keySpace) && Global.level < Global.NUM_LEVELS)
 			{
 				this.addShadow();	
 			}
