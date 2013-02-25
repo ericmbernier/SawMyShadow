@@ -41,14 +41,14 @@ package com.shadow
 		// Gameworld graphics
 		[Embed(source = '../assets/graphics/mute.png')] public static const MUTE_BTN:Class;
 		[Embed(source = '../assets/graphics/unmute.png')] public static const UNMUTE_BTN:Class;
-		[Embed(source = '../assets/graphics/sky.png')] public static const SKY_BG:Class;
+		[Embed(source = '../assets/graphics/skyGrad.png')] public static const SKY_BG:Class;
 		[Embed(source = '../assets/graphics/tvScan.png')] public static const TV_SCAN:Class;
 		[Embed(source = '../assets/graphics/sign.png')] public static const DIR_SIGN:Class;
 		[Embed(source = '../assets/graphics/dirBg.png')] public static const DIR_BG:Class;
 		[Embed(source = '../assets/graphics/tree.png')] public static const TREE:Class;
 		
 		// Platforms and Objects     
-		[Embed(source = '../assets/graphics/door.png')] public static const OBJECT_CRATE:Class;
+		[Embed(source = '../assets/graphics/crate.png')] public static const OBJECT_CRATE:Class;
 		[Embed(source = '../assets/graphics/door.png')] public static const OBJECT_DOOR:Class;
 		
 		// Collectables
@@ -61,20 +61,18 @@ package com.shadow
 		[Embed(source = '../assets/graphics/newtonBlur.png')] public static const EFFECTS_DASH_BLUR:Class;
 		
 		// Music
-		[Embed(source = '../assets/music/MorningMood.mp3')] public static const MUS_MENU:Class;
-		[Embed(source = '../assets/music/swanLake.mp3')] public static const MUS_GAME:Class;
-		[Embed(source = '../assets/music/egyptionMarch.mp3')] public static const MUS_ENDING:Class;
+		[Embed(source = '../assets/music/HappyWalk.mp3')] public static const MUS_MENU:Class;
+		[Embed(source = '../assets/music/CrocoRocket.mp3')] public static const MUS_GAME:Class;
+		[Embed(source = '../assets/music/ChoroBavario.mp3')] public static const MUS_ENDING:Class;
 		
 		// Sound
-		[Embed(source = '../assets/sound/appleBite.mp3')] public static const SND_APPLE:Class;
-		[Embed(source = '../assets/sound/appleHurt.mp3')] public static const SND_APPLE_HURT:Class;
-		[Embed(source = '../assets/sound/buttonHover.mp3')] public static const SND_APPLE_JUMP:Class;
 		[Embed(source = '../assets/sound/buttonSelect.mp3')] public static const SND_BUTTON_BACK:Class;
 		[Embed(source = '../assets/sound/buttonHover.mp3')] public static const SND_BUTTON_HOVER:Class;
 		[Embed(source = '../assets/sound/buttonSelect.mp3')] public static const SND_BUTTON_SELECT:Class;
 		[Embed(source = '../assets/sound/buttonSelect.mp3')] public static const SND_DEATH:Class;
-		[Embed(source = '../assets/sound/buttonHover.mp3')] public static const SND_DOOR:Class;
+		[Embed(source = '../assets/sound/door.mp3')] public static const SND_DOOR:Class;
+		[Embed(source = '../assets/sound/flower.mp3')] public static const SND_FLOWER:Class;
 		[Embed(source = '../assets/sound/buttonHover.mp3')] public static const SND_JUMP:Class;
-		[Embed(source = '../assets/sound/buttonHover.mp3')] public static const SND_KEY:Class;
+		[Embed(source = '../assets/sound/buttonSelect.mp3')] public static const SND_SHADOW:Class;
 	}
 }

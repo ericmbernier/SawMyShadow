@@ -104,8 +104,8 @@ package com.shadow
 			TRANSITION_FADE:uint = 3,
 			
 			// Suggested: Music 55, Sound 85
-			DEFAULT_MUSIC_VOLUME:Number = 0.40,
-			DEFAULT_SFX_VOLUME:Number = 1.0 ,
+			DEFAULT_MUSIC_VOLUME:Number = 0.55,
+			DEFAULT_SFX_VOLUME:Number = 0.85 ,
 			DEFAULT_VOICE_VOLUME:Number = 1,
 			PAUSED_MUSIC_VOLUME:Number = 0.15,
 			LEVEL_COMPLETE_VOLUME:Number = 0.15,

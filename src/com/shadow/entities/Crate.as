@@ -9,22 +9,17 @@ package com.shadow.entities
 	import net.flashpunk.utils.Input;
 	
 	
-	
 	/**
 	 *
 	 * @author Eric Bernier
 	 */
 	public class Crate extends Physics
 	{
-		//private var sprite:Image = new Image(Assets.OBJECT_CRATE);
 		private var sprite:Spritemap = new Spritemap(Assets.OBJECT_CRATE, 32, 32, null);
 		
 		// This is here to check how long the player has been direction, before crate is moving_
 		private var timer_:int = 10;
-		
 		private var direction_:int;
-		
-		// If we're moving (being pushed)
 		private var moving_:Boolean = false;
 		
 		// Our speed when being pushed (shouldn't be larger than player speed)
@@ -35,7 +30,7 @@ package com.shadow.entities
 		
 		public function Crate(x:int, y:int) 
 		{
-			super(x, y);
+			super(x, y - 2);
 			
 			graphic = sprite;
 			this.type = Global.SOLID_TYPE;
@@ -132,3 +127,4 @@ package com.shadow.entities
 		}
 	}
 }
+

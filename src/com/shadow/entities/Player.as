@@ -4,7 +4,6 @@ package com.shadow.entities
 	
 	import com.shadow.Assets;
 	import com.shadow.Global;
-	import com.shadow.effects.Blur;
 	
 	import flash.geom.Point;
 	
@@ -41,8 +40,8 @@ package com.shadow.entities
 		private var dead:Boolean = false;
 		private var start:Point;
 		private var jumpSnd_:Sfx = new Sfx(Assets.SND_JUMP);
-		private var appleSnd_:Sfx = new Sfx(Assets.SND_APPLE_JUMP);
 		private var deathSnd_:Sfx = new Sfx(Assets.SND_BUTTON_SELECT);
+		private var shadowSnd_:Sfx = new Sfx(Assets.SND_SHADOW);
 		
 		
 		public function Player(xCoord:int, yCoord:int, shadow:Boolean = false) 
@@ -204,6 +203,8 @@ package com.shadow.entities
 				if (this.x >= ENDING_X)
 				{
 					ending_ = true;
+					
+					FP.world.add(new Shadow(x + width + 5, y));
 				}
 			}
 		}	
@@ -260,6 +261,7 @@ package com.shadow.entities
 	
 		public function addShadow():void
 		{	
+			shadowSnd_.play(Global.soundVolume);
 			Global.haveShadow = true;
 			FP.world.add(new Shadow(x, y));
 		}

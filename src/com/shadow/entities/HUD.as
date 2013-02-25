@@ -27,26 +27,26 @@ package com.shadow.entities
 	public class HUD extends Entity
 	{	
 		private var levelTxt_:Text = new Text("Level", 10, 3, {size:16, color:0xFFFFFF, 
-			outlineColor:0x000000, outlineStrength:3, font:"Essays"});
+			outlineColor:0x000000, outlineStrength:3, font:"Rumpel"});
 		private var levelNum_:Text = new Text("0", 40, 3, {size:16, 
-			outlineColor:0x000000, outlineStrength:3, font:"Essays"});
+			outlineColor:0x000000, outlineStrength:3, font:"Rumpel"});
 		private var levelName_:Text = new Text("The Forest", 50, 3, {size:16, 
-			outlineColor:0x000000, outlineStrength:3, font:"Essays"});
+			outlineColor:0x000000, outlineStrength:3, font:"Rumpel"});
 		
 		private var pauseTxt_:Text = new Text("(P)ause", 0, 0, {size:16, color:0xFFFFFF, 
-			outlineColor:0x000000, outlineStrength:2, font: "Essays"});
+			outlineColor:0x000000, outlineStrength:2, font: "Rumpel"});
 		private var pauseTxtHover_:Text = new Text("(P)ause", 0, 0, {size:16, color:0xFFFFFF, 
-			outlineColor:0x000000, outlineStrength:2, font: "Essays"});
+			outlineColor:0x000000, outlineStrength:2, font: "Rumpel"});
 		
 		private var muteTxt_:Text = new Text("(M)ute", 0, 0, {size:16, color:0xFFFFFF, 
-			outlineColor:0x000000, outlineStrength:2, font: "Essays"});
+			outlineColor:0x000000, outlineStrength:2, font: "Rumpel"});
 		private var muteTxtHover_:Text = new Text("(M)ute", 0, 0, {size:16, color:0xFFFFFF, 
-			outlineColor:0x000000, outlineStrength:2, font: "Essays"});
+			outlineColor:0x000000, outlineStrength:2, font: "Rumpel"});
 		
 		private var restartTxt_:Text = new Text("(R)estart", 0, 0, {size:16, outlineColor:0x000000, 
-			outlineStrength:2, font: "Essays"});
+			outlineStrength:2, font: "Rumpel"});
 		private var restartTxtHover_:Text = new Text("(R)estart", 0, 0, {size:16, outlineColor:0x000000, 
-			outlineStrength:2, font: "Essays"});
+			outlineStrength:2, font: "Rumpel"});
 		
 		private var gfx_:Graphiclist;
 		

@@ -30,8 +30,7 @@ package com.shadow.entities
         private const HEIGHT:uint = 24;
     
 		private var image_:Image = new Image(Assets.FLOWER);			
-		private var appleSnd_:Sfx = new Sfx(Assets.SND_APPLE);
-		private var appleHurtSnd_:Sfx = new Sfx(Assets.SND_APPLE_HURT);
+		private var flowerSnd_:Sfx = new Sfx(Assets.SND_FLOWER);
 	
 
 		public function Flower(xCoord:int, yCoord:int)
@@ -50,38 +49,6 @@ package com.shadow.entities
 			
 			this.setHitbox(WIDTH, HEIGHT);
 		}
-        
-			
-		override public function update():void
-		{	
-			super.update();	
-			
-			if (Global.player.ending_)
-			{
-				this.y += FP.elapsed * 100;
-				
-				if (this.collide(Global.PLAYER_TYPE, x, y - 4))
-				{
-					this.type = "NOT_AN_APPLE";
-					appleHurtSnd_.play(Global.soundVolume);
-					
-					world.add(new Particle(x, y, .5, .5, .1, 0xF3232D));
-					world.add(new Particle(x + 5, y + 5, .5, .5, .1, 0xF3232D));
-					world.add(new Particle(x - 5, y - 5, .5, .5, .1, 0xF3232D));
-					
-					Global.gameMusic.stop();
-					var question:Text = new Text("?", Global.player.x + 9, Global.player.y - 32, {size:22, color:0xFFFFFF, 
-							font:"Essays", outlineColor:0x000000, outlineStrength:2});
-					FP.world.addGraphic(question);
-					
-					Transition.to(EndWorld, 
-						new StarIn({duration:3, track:Global.PLAYER_TYPE}), 
-						new StarOut());
-					
-					FP.world.remove(this);
-				}
-			}
-		}
 		
 
 		public function collect():void
@@ -92,7 +59,7 @@ package com.shadow.entities
             world.add(new Particle(x + 5, y + 5, .5, .5, .1, 0xF3232D));
             world.add(new Particle(x - 5, y - 5, .5, .5, .1, 0xF3232D));
 			
-			appleSnd_.play(Global.soundVolume);
+			flowerSnd_.play(Global.soundVolume);
 			FP.world.remove(this);
 		}
 	}

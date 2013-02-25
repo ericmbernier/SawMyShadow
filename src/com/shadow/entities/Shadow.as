@@ -4,7 +4,7 @@ package com.shadow.entities
 	
 	import com.shadow.Assets;
 	import com.shadow.Global;
-	import com.shadow.effects.Blur;
+	import com.shadow.worlds.EndWorld;
 	
 	import flash.geom.Point;
 	
@@ -13,9 +13,13 @@ package com.shadow.entities
 	import net.flashpunk.Sfx;
 	import net.flashpunk.graphics.Image;
 	import net.flashpunk.graphics.Spritemap;
+	import net.flashpunk.graphics.Text;
 	import net.flashpunk.tweens.sound.SfxFader;
 	import net.flashpunk.utils.Input;
 	import net.flashpunk.utils.Key;
+	
+	import punk.transition.Transition;
+	import punk.transition.effects.*;
 	
 	
 	/**
@@ -42,7 +46,6 @@ package com.shadow.entities
 		private var start:Point;
 		private var apples_:Boolean = false;
 		private var jumpSnd_:Sfx = new Sfx(Assets.SND_JUMP);
-		private var appleSnd_:Sfx = new Sfx(Assets.SND_APPLE_JUMP);
 		private var deathSnd_:Sfx = new Sfx(Assets.SND_BUTTON_SELECT);
 		
 		
@@ -80,8 +83,7 @@ package com.shadow.entities
 			
 			if (ending_)
 			{
-				sprite.play("idle");
-				return;
+				direction_ = false;
 			}
 			else if (sprite.alpha < 1) 
 			{ 
@@ -93,6 +95,18 @@ package com.shadow.entities
 			if (collide(Global.SOLID_TYPE, x, y + 1) || Global.onMovingPlatform || collide(Global.PLAYER_TYPE, x, y + 1)) 
 			{ 
 				onGround_ = true;
+			}
+			
+			if (onGround_ && ending_)
+			{	
+				Global.gameMusic.stop();
+				var question:Text = new Text("?", Global.player.x + 9, Global.player.y - 32, {size:22, color:0xFFFFFF, 
+					font:"Rumpel", outlineColor:0x000000, outlineStrength:2});
+				FP.world.addGraphic(question);
+				
+				Transition.to(EndWorld, 
+					new StarIn({duration:2, track:Global.PLAYER_TYPE}), 
+					new StarOut());
 			}
 			
 			// Set acceleration to nothing

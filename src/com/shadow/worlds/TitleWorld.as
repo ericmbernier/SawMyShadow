@@ -54,9 +54,9 @@ package com.shadow.worlds
 		private var backTxt_:Text = new Text("Back", 0, 20, {size:28, color:0xFFFFFF, font:"Rumpel", outlineColor:0x000000, outlineStrength:2});
 		private var backTxtHover_:Text = new Text("Back", 0, 20, {size:28, color:0xFFFFFF, font:"Rumpel", outlineColor:0x000000, outlineStrength:2});
 		private var gameByTxt_:Text = new Text("A Game by Eric Bernier", 0, 0, {size:23, color:0xFFFFFF, 
-			font:"Rumpel", outlineColor:0x000000, outlineStrength:2});
+				font:"Rumpel", outlineColor:0x000000, outlineStrength:2});
 		private var levelSelTxt_:Text = new Text("Select Your Level!", 70, 150, {size:26, color:0xFFFFFF, visible:false,
-			font:"Rumpel", outlineColor:0x000000, outlineStrength:2});
+				font:"Rumpel", outlineColor:0x000000, outlineStrength:2});
 		
 		// Buttons on the title screen
 		private var playGameBtn_:TextButton;
@@ -97,8 +97,8 @@ package com.shadow.worlds
 			this.addGraphic(gameByTxt_);
 			this.addGraphic(groundHog_);
 			
-			groundHog_.x = 225;
-			groundHog_.y =110;
+			groundHog_.x = 205;
+			groundHog_.y = 80;
 			
 			// Initialize and set all of the text on the main screen
 			playGameTxt_.width = FP.width;
@@ -223,9 +223,7 @@ package com.shadow.worlds
 				levelsToAdd = 1;
 				lockedLevels = Global.NUM_LEVELS - levelsToAdd;
 			}
-			
-			FP.console.log(levelsToAdd);
-			
+
 			// Add all of the level select buttons
 			for (var i:int = 0; i < levelsToAdd; i++)
 			{

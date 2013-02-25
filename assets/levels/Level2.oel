@@ -2,44 +2,50 @@
   <width>640</width>
   <height>480</height>
   <outdoorTileset set="tileset">
-    <tile tx="120" ty="0" x="0" y="450"/>
-    <tile tx="120" ty="0" x="30" y="450"/>
-    <tile tx="120" ty="0" x="60" y="450"/>
-    <tile tx="120" ty="0" x="210" y="450"/>
-    <tile tx="120" ty="0" x="300" y="450"/>
-    <tile tx="120" ty="0" x="330" y="450"/>
-    <tile tx="120" ty="0" x="360" y="450"/>
-    <tile tx="120" ty="0" x="390" y="450"/>
-    <tile tx="120" ty="0" x="480" y="450"/>
-    <tile tx="120" ty="0" x="510" y="450"/>
-    <tile tx="120" ty="0" x="540" y="450"/>
-    <tile tx="120" ty="0" x="570" y="450"/>
-    <tile tx="120" ty="0" x="600" y="450"/>
     <tile tx="120" ty="0" x="630" y="450"/>
-    <tile tx="120" ty="0" x="90" y="450"/>
-    <tile tx="120" ty="0" x="120" y="450"/>
-    <tile tx="120" ty="0" x="150" y="450"/>
+    <tile tx="120" ty="0" x="600" y="450"/>
+    <tile tx="120" ty="0" x="450" y="450"/>
+    <tile tx="120" ty="0" x="420" y="450"/>
+    <tile tx="120" ty="0" x="390" y="450"/>
+    <tile tx="120" ty="0" x="360" y="450"/>
+    <tile tx="120" ty="0" x="330" y="450"/>
+    <tile tx="120" ty="0" x="300" y="450"/>
+    <tile tx="120" ty="0" x="270" y="450"/>
+    <tile tx="120" ty="0" x="240" y="450"/>
+    <tile tx="120" ty="0" x="210" y="450"/>
     <tile tx="120" ty="0" x="180" y="450"/>
+    <tile tx="120" ty="0" x="150" y="450"/>
+    <tile tx="120" ty="0" x="120" y="450"/>
+    <tile tx="120" ty="0" x="90" y="450"/>
+    <tile tx="120" ty="0" x="60" y="450"/>
+    <tile tx="120" ty="0" x="30" y="450"/>
+    <tile tx="120" ty="0" x="0" y="450"/>
+    <tile tx="120" ty="0" x="570" y="450"/>
+    <tile tx="120" ty="0" x="540" y="450"/>
+    <tile tx="120" ty="0" x="510" y="450"/>
+    <tile tx="120" ty="0" x="480" y="450"/>
+    <tile tx="120" ty="0" x="240" y="360"/>
+    <tile tx="120" ty="0" x="270" y="360"/>
+    <tile tx="120" ty="0" x="300" y="360"/>
+    <tile tx="120" ty="0" x="330" y="360"/>
+    <tile tx="120" ty="0" x="360" y="360"/>
+    <tile tx="120" ty="0" x="390" y="360"/>
   </outdoorTileset>
   <entities>
-    <player x="24" y="416"/>
-    <apple x="352" y="408"/>
-    <tree x="576" y="368"/>
-    <sign x="120" y="424" text="Thou has made an amazing discovery!
-Eating apples helps thou temporarily defy gravity!
-Quick, runeth off and tell the others!" />
-    <door x="520" y="416"/>
-    <tree x="166" y="368"/>
+    <player x="16" y="420"/>
+    <tree x="554" y="370"/>
+    <tree x="160" y="370"/>
+    <sign x="88" y="426"/>
+    <flower x="322" y="410"/>
+    <door x="318" y="328"/>
+    <flower x="396" y="282"/>
+    <flower x="246" y="282"/>
   </entities>
   <floors>
-    <rect x="0" y="0" w="8" h="456"/>
-    <rect x="8" y="448" w="232" h="8"/>
-    <rect x="232" y="456" w="8" h="24"/>
-    <rect x="296" y="448" w="128" h="8"/>
-    <rect x="296" y="456" w="8" h="24"/>
-    <rect x="416" y="456" w="8" h="24"/>
-    <rect x="480" y="448" w="160" h="8"/>
-    <rect x="480" y="456" w="8" h="24"/>
-    <rect x="632" y="0" w="8" h="448"/>
+    <rect x="0" y="0" w="640" h="10"/>
+    <rect x="0" y="10" w="10" h="450"/>
+    <rect x="10" y="450" w="630" h="10"/>
+    <rect x="240" y="360" w="180" h="30"/>
+    <rect x="630" y="10" w="10" h="440"/>
   </floors>
 </level>

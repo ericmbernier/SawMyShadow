@@ -207,9 +207,14 @@ package com.shadow.worlds
 				add(new Solid(o.@x, o.@y, o.@w, o.@h));
 			}
 			
-			for each (o in xml.entities[0].apple) 
+			for each (o in xml.entities[0].flower) 
 			{
 				add(new Flower(o.@x, o.@y));
+			}
+			
+			for each (o in xml.entities[0].crate) 
+			{
+				add(new Crate(o.@x, o.@y));
 			}
 			
 			directionsArray_ = new Array();
