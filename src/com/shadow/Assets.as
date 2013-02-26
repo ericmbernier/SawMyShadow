@@ -57,9 +57,6 @@ package com.shadow
 		// Player
 		[Embed(source = '../assets/graphics/groundhogSprite.png')] public static const GROUNDHOG:Class;
 		
-		// Effects
-		[Embed(source = '../assets/graphics/newtonBlur.png')] public static const EFFECTS_DASH_BLUR:Class;
-		
 		// Music
 		[Embed(source = '../assets/music/HappyWalk.mp3')] public static const MUS_MENU:Class;
 		[Embed(source = '../assets/music/CrocoRocket.mp3')] public static const MUS_GAME:Class;
@@ -69,7 +66,7 @@ package com.shadow
 		[Embed(source = '../assets/sound/buttonSelect.mp3')] public static const SND_BUTTON_BACK:Class;
 		[Embed(source = '../assets/sound/buttonHover.mp3')] public static const SND_BUTTON_HOVER:Class;
 		[Embed(source = '../assets/sound/buttonSelect.mp3')] public static const SND_BUTTON_SELECT:Class;
-		[Embed(source = '../assets/sound/buttonSelect.mp3')] public static const SND_DEATH:Class;
+		[Embed(source = '../assets/sound/death.mp3')] public static const SND_DEATH:Class;
 		[Embed(source = '../assets/sound/door.mp3')] public static const SND_DOOR:Class;
 		[Embed(source = '../assets/sound/flower.mp3')] public static const SND_FLOWER:Class;
 		[Embed(source = '../assets/sound/buttonHover.mp3')] public static const SND_JUMP:Class;

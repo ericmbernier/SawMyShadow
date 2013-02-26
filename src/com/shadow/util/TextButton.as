@@ -30,6 +30,11 @@ package com.shadow.util
 	import net.flashpunk.utils.Input;
 	
 	
+	/**
+	 * 
+	 * @author Eric Bernier <http://www.ericbernier.com>
+	 * Based on the Button class by rolpege on the flashpunk.net forums
+	 */
 	public class TextButton extends Entity
 	{
 		public var callback:Function = null;

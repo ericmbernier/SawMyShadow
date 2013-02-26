@@ -25,6 +25,7 @@ package com.shadow.entities
 	/**
 	 * 
 	 * @author Eric Bernier
+	 * This is quite the hack of a class due to laziness and just wanting to finish the game
 	 */
 	public class Shadow extends Physics
 	{	
@@ -36,10 +37,7 @@ package com.shadow.entities
 		
 		private var sprite:Spritemap = new Spritemap(Assets.GROUNDHOG, WIDTH, HEIGHT, null);
 		private var movement:Number = 1;
-		
-		// Current player direction (true = right, false = left)
 		private var direction_:Boolean = true;
-		
 		public var onGround_:Boolean = false;
 		public var ending_:Boolean = false;
 		private var dead:Boolean = false;
@@ -90,7 +88,6 @@ package com.shadow.entities
 				sprite.alpha += 0.1 
 			}
 			
-			// Are we on the ground?
 			onGround_ = false;
 			if (collide(Global.SOLID_TYPE, x, y + 1) || Global.onMovingPlatform || collide(Global.PLAYER_TYPE, x, y + 1)) 
 			{ 
@@ -109,10 +106,7 @@ package com.shadow.entities
 					new StarOut());
 			}
 			
-			// Set acceleration to nothing
 			acceleration_.x = 0;
-			
-			// Increase acceleration, if we're not going too fast
 			if (Input.check(Global.keyA) && speed_.x > -maxSpeed_.x) 
 			{ 
 				acceleration_.x = -movement; 
@@ -125,18 +119,15 @@ package com.shadow.entities
 				direction_ = true; 
 			}
 			
-			// Friction (apply if we're not moving, or if our speed_.x is larger than maxspeed)
 			if ( (!Input.check(Global.keyA) && !Input.check(Global.keyD)) || Math.abs(speed_.x) > maxSpeed_.x) 
 			{ 
 				friction(true, false); 
 			}
 			
-			// We should jump
 			if (Input.pressed(Global.keyW)) 
 			{
 				var jumped:Boolean = false;
 				
-				// Normal jump
 				if (onGround_ && Global.level < Global.NUM_LEVELS) 
 				{ 
 					speed_.y = -JUMP; 
@@ -151,24 +142,14 @@ package com.shadow.entities
 			}
 			
 			gravity();
-			
-			//----------------------------------------------------------------------------------
-			// Make sure we're not going too fast vertically. The reason we don't stop the 
-			// player from moving too fast left/right is because that would (partially) destroy 
-			// the walljumping. Instead, we just make sure the player, using the arrow keys, 
-			// can't go faster than the max speed, and if we are going faster
-			//than the max speed, descrease it with friction slowly.
-			//----------------------------------------------------------------------------------
 			maxspeed(false, true);
 			
-			// Variable jumping (triple gravity)
 			if (speed_.y < 0 && !Input.check(Global.keyW))
 			{ 
 				gravity(); 
 				gravity(); 
 			}        
 			
-			// Set the sprites according to if we're on the ground, and if we are moving or not
 			if (onGround_)
 			{
 				if (speed_.x < 0 || speed_.x > 0) 
@@ -186,9 +167,7 @@ package com.shadow.entities
 				sprite.play("jump"); 
 			}
 			
-			// Set the motion. We set this later so it stops all movement if we should be stopped
 			motion();
-			
 			if (this.y >= Global.levelHeight)
 			{
 				FP.world.remove(this);
@@ -203,8 +182,6 @@ package com.shadow.entities
 				sprite.flipped = false;
 			}
 			
-			// Check if the game is ending. This is quite the hack, and if I wanted to
-			// take the time I would have created an EndingWorld that handled all of this better
 			if (Global.level == Global.NUM_LEVELS)
 			{
 				if (this.x >= ENDING_X)

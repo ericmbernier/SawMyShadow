@@ -38,7 +38,7 @@ package com.shadow.worlds
 	
 	/**
 	 * 
-	 * @author Eric Bernier
+	 * @author Eric Bernier <http://www.ericbernier.com>
 	 */
 	public class GameWorld extends World
 	{		
@@ -68,7 +68,6 @@ package com.shadow.worlds
 		
 		override public function update():void 
 		{
-			// Only update if the game is not paused
 			if (Global.paused)
 			{
 				if (Input.pressed(Global.keyEnter) || Input.pressed(Global.keyP))
@@ -119,10 +118,6 @@ package com.shadow.worlds
 				}
 			}
 			
-			// Global.bg.x -= 0.25;
-			// Global.bg.y -= 0.25;
-			
-			// Load next level upon previous level completion
 			if (Global.finished) 
 			{
 				nextlevel();
@@ -134,6 +129,7 @@ package com.shadow.worlds
 		{
 			super.render();
 		}
+		
 	
 		public function loadlevel():void 
 		{	
@@ -149,7 +145,6 @@ package com.shadow.worlds
 			var o:XML;
 			var n:XML;
 			
-			// Set the level size
 			FP.width = xml.width;
 			FP.height = xml.height;
 			

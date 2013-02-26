@@ -29,9 +29,9 @@
     <tree x="502" y="370"/>
     <apple x="502" y="370"/>
     <player x="16" y="416"/>
-    <sign x="125" y="424" text="Town is right past that tree, Sir Isaac.
-Take your time, thou has earned it. 
-The world is going to cherish the ground thou walks on!"/>
+    <sign x="125" y="424" text="The party is right past that tree!
+Whatever you do, don't bump into your shadow, as the town
+folk will surely label you the party pooper!"/>
   </entities>
   <floors>
     <rect x="0" y="0" w="8" h="456"/>

@@ -35,7 +35,8 @@
     <player x="16" y="420"/>
     <tree x="554" y="370"/>
     <tree x="160" y="370"/>
-    <sign x="88" y="426"/>
+    <sign x="88" y="426" text="Use your shadow to get to hard-to-reach places.
+However, remember your shadow can't interact with anything but you!"/>
     <flower x="322" y="410"/>
     <door x="318" y="328"/>
     <flower x="396" y="282"/>

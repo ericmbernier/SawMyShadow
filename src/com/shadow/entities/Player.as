@@ -40,7 +40,7 @@ package com.shadow.entities
 		private var dead:Boolean = false;
 		private var start:Point;
 		private var jumpSnd_:Sfx = new Sfx(Assets.SND_JUMP);
-		private var deathSnd_:Sfx = new Sfx(Assets.SND_BUTTON_SELECT);
+		private var deathSnd_:Sfx = new Sfx(Assets.SND_DEATH);
 		private var shadowSnd_:Sfx = new Sfx(Assets.SND_SHADOW);
 		
 		
@@ -51,19 +51,16 @@ package com.shadow.entities
 			start = new Point(xCoord, yCoord);
 			type = Global.PLAYER_TYPE;
 			
-			// Set different speeds and such
 			gravity_ = 0.4;
 			maxSpeed_ = new Point(4, 8);
 			friction_ = new Point(0.5, 0.5);
-			
-			// Set up animations
+
 			sprite.add("stand", [0, 1], 6, true);
 			sprite.add("idle", [0, 1], 6, true);
 			sprite.add("walk", [4, 5, 6, 7], 10, true);
 			sprite.add("jump", [1], 0, false);
 			sprite.play("stand");
 			
-			// Set hitbox & graphic
 			this.setHitbox(25, 25, 0, -4);
 			graphic = sprite;
 		}
@@ -92,17 +89,13 @@ package com.shadow.entities
 				sprite.alpha += 0.1 
 			}
 			
-            // Are we on the ground?
             onGround_ = false;
             if (collide(Global.SOLID_TYPE, x, y + 1) || Global.onMovingPlatform) 
             { 
                 onGround_ = true;
             }
             
-            // Set acceleration to nothing
             acceleration_.x = 0;
-            
-            // Increase acceleration, if we're not going too fast
             if (Input.check(Global.keyLeft)  && speed_.x > -maxSpeed_.x) 
             { 
                 acceleration_.x = -movement; 
@@ -121,12 +114,9 @@ package com.shadow.entities
                 friction(true, false); 
             }
             
-            // We should jump
             if (Input.pressed(Global.keyUp)) 
             {
                 var jumped:Boolean = false;
-                
-                // Normal jump
                 if (onGround_ && Global.level < Global.NUM_LEVELS) 
                 { 
                     speed_.y = -JUMP; 
@@ -158,7 +148,6 @@ package com.shadow.entities
                 gravity(); 
             }        
 
-			// Set the sprites according to if we're on the ground, and if we are moving or not
 			if (onGround_)
 			{
 				if (speed_.x < 0 || speed_.x > 0) 
@@ -176,7 +165,6 @@ package com.shadow.entities
 				sprite.play("jump"); 
 			}
 
-			// Set the motion. We set this later so it stops all movement if we should be stopped
 			motion();
 			
 			// Check if we just died, either via enemy contact or falling to our death
@@ -227,12 +215,6 @@ package com.shadow.entities
 			deathSnd_.play(Global.soundVolume);
 			Global.flowerVal = 0;
 			Global.restart = true;
-		}
-		
-		
-		public function animEnd():void 
-		{ 
-			// Do nothing
 		}
 		
 		

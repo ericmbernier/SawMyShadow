@@ -45,18 +45,15 @@ package com.shadow.entities
 		
 		override public function update():void
 		{
-			// Set the graphic to the default one
 			graphic = sprite_;
 			
 			if (collideWith(Global.player, x, y)) 
 			{
-				// Set the sprite to the hover one
 				graphic = spriteHover_;
 				
 				// Note the use of collideWith (above). This is faster than using collde("type")
 				if (!locked_)
 				{					
-					// If down is pressed, finish level
 					if (Input.pressed(Global.keyDown) || Input.pressed(Global.keyS))
 					{
 						doorSnd_.play(Global.soundVolume);

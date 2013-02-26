@@ -38,8 +38,10 @@
     <tile tx="120" ty="0" x="630" y="210"/>
   </outdoorTileset>
   <entities>
-    <sign x="198" y="336"/>
-    <sign x="412" y="276"/>
+    <sign x="198" y="336" text="It's February 2nd. This is your day!
+Get to town hall to celebrate, but don't let the town see your shadow."/>
+    <sign x="412" y="276" text="Six more weeks of winter? Spring coming early?
+Who cares you say, you intend to sleep the six weeks anyway!"/>
     <tree x="554" y="370"/>
     <door x="578" y="178"/>
     <flower x="412" y="388"/>

@@ -4,11 +4,7 @@ package com.shadow.entities.solids
 	
 	import net.flashpunk.Entity;
 	
-	
-	/**
-	 * 
-	 * @author Eric Bernier
-	 */
+
 	public class Solid extends Entity
 	{
 		public function Solid(x:int, y:int, w:int = 32, h:int = 32) 

@@ -44,6 +44,7 @@ package com.shadow.util
 			speed_ = speed;
 		}
 		
+		
 		override public function update():void
 		{
 			// Follow the entity

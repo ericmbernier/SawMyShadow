@@ -79,9 +79,9 @@ package com.shadow
 		// Set this to true to enable Playtomic logging
 		private var playtomic_:Boolean = true;
 		
-		private var SWFID:int = 962067;
-		private var GUID:String = "e94ec5015ec04f74";
-		private var API_Key:String = "24229aa70c0d4bf9b9be2aa806e0b6";
+		private var SWFID:int = 982743;
+		private var GUID:String = "9e28bc4a82fc4c90";
+		private var API_Key:String = "907b2132c3ca454e84f3168214d875";
 		
 		private var mustClick_:Boolean = true;
 		private var loadPreloader_:Boolean = true;
@@ -94,7 +94,6 @@ package com.shadow
 			// Log the entry to PlayTomic
 			// Log.View(PT_SWF_ID:int, PT_GUID:string, PT_API:string, root.loaderInfo.loaderURL);
 			Log.View(SWFID, GUID, API_Key, root.loaderInfo.loaderURL);
-			
 			this.init();
 		}
 		
@@ -139,14 +138,14 @@ package com.shadow
 			
 			progressBarBg = new Shape();
 			progressBarBg.graphics.beginFill(BG_COLOR);
-			progressBarBg.graphics.drawRect(175, py - 3, 375, h + 6);
+			progressBarBg.graphics.drawRect(135, py - 3, 375, h + 6);
 			progressBarBg.graphics.endFill();
 			progressBarBg.alpha = 0.6;
 			this.addChild(progressBarBg);
 			TweenMax.from(progressBarBg, 0.35, {x: -300, ease:Quad.easeIn, delay:0, onComplete:null});	
 			
 			graphics.beginFill(0xF7EAE8);
-			graphics.drawRect(px - 2, py - 2, w + 4, h + 4);
+			graphics.drawRect(px - 20, py - 2, w + 4, h + 4);
 			graphics.endFill();
 			progressBar = new Shape();
 			addChild(progressBar);
@@ -163,7 +162,7 @@ package com.shadow
 					progressBar.graphics.clear();
 					progressBar.graphics.beginFill(PB_COLOR);
 					
-					progressBar.graphics.drawRect(PROG_BAR_X + 45, py, PROGRESS_BAR_WIDTH, h);
+					progressBar.graphics.drawRect(PROG_BAR_X + 5, py, PROGRESS_BAR_WIDTH, h);
 					progressBar.graphics.endFill();
 					
 					if (!playBtnLoaded_)
@@ -200,7 +199,7 @@ package com.shadow
 					progressBar.graphics.clear();
 					progressBar.graphics.beginFill(PB_COLOR);
 					
-					progressBar.graphics.drawRect(PROG_BAR_X + 45, py, p * PROGRESS_BAR_WIDTH, h);
+					progressBar.graphics.drawRect(PROG_BAR_X + 5, py, p * PROGRESS_BAR_WIDTH, h);
 					progressBar.graphics.endFill();
 				}       
 			}

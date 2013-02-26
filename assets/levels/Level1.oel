@@ -37,9 +37,13 @@
     <tree x="178" y="370"/>
     <tree x="350" y="370"/>
     <player x="14" y="420"/>
-    <sign x="100" y="426"/>
-    <sign x="288" y="426"/>
-    <sign x="476" y="426"/>
+    <sign x="100" y="426" text="Welcome groundhog!
+Run with the arrow keys. Jump via Up. No WASD controls for you!"/>   
+    <sign x="288" y="426" text="You're a special groundhog!
+Spawn your very own shadow by pressing Space Bar."/>
+    <sign x="476" y="426" text="Control your shadow with the WASD keys!
+You can respawn at will.
+Be wary, your shadow can't pass to the next level!"/>
     <door x="578" y="358"/>
     <flower x="290" y="352"/>
     <flower x="498" y="354"/>

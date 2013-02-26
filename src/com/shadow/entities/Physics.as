@@ -13,8 +13,7 @@ package com.shadow.entities
 	 * @author Eric Bernier
 	 */
 	public class Physics extends Entity
-	{		
-		// TODO: Format variables and make speeds global variables and not hard-coded values        
+	{      
 		public var speed_:Point = new Point(0, 0);			
 		public var acceleration_:Point = new Point(0, 0);	
 		
@@ -47,29 +46,23 @@ package com.shadow.entities
 		 */
 		public function motion(mx:Boolean = true, my:Boolean = true):void 
 		{	
-			// If we should move horizontally
 			if (mx)
 			{
-				//make us move, and stop us on collision
 				if (!motionx(this, speed_.x)) 
 				{ 
 					speed_.x = 0; 
 				}
 				
-				// Increase velocity/speed
 				speed_.x += acceleration_.x;
 			}
 			
-			// If we should move vertically
 			if (my)
 			{
-				// Make us move, and stop us on collision
 				if (!motiony(this, speed_.y)) 
 				{ 
 					speed_.y = 0; 
 				}
 				
-				// Increase velocity/speed
 				speed_.y += acceleration_.y;
 			}			
 		}
@@ -81,7 +74,6 @@ package com.shadow.entities
 		 */
 		public function gravity():void 
 		{
-			// Increase velocity/speed_based on gravity
 			speed_.y += gravity_;
 		}
 		
@@ -94,26 +86,21 @@ package com.shadow.entities
 		 */
 		public function friction(x:Boolean = true, y:Boolean = true):void 
 		{
-			// If we should use friction, horizontally
 			if (x)
 			{
-				// Speed > 0 then slow down
 				if (speed_.x > 0)
 				{
 					speed_.x -= friction_.x;
-					// If we go below 0, stop.
 					if (speed_.x < 0) 
 					{ 
 						speed_.x = 0; 
 					}
 				}
 				
-				// Speed < 0  then "speed_up" (in a sense)
 				if (speed_.x < 0)
 				{
 					speed_.x += friction_.x;
 					
-					// If we go above 0 then stop
 					if (speed_.x > 0) 
 					{ 
 						speed_.x = 0; 
@@ -157,10 +144,8 @@ package com.shadow.entities
 		 */
 		public function motionx(e:Entity, spdx:Number):Boolean
 		{
-			// Check each pixel before moving it
 			for (var i:int = 0; i < Math.abs(spdx); i ++) 
 			{
-				// If we've moved
 				var moved:Boolean = false;
 				var below:Boolean = true;
 				
@@ -169,44 +154,33 @@ package com.shadow.entities
 					below = false; 
 				}
 				
-				// Run through how high a slope we can move up
 				for (var s:int = 0; s <= slopeHeight_; s ++)
 				{
-					// If we don't hit a solid in the direction we're moving, move
 					if (!e.collide(Global.SOLID_TYPE, e.x + FP.sign(spdx), e.y - s)) 
 					{
-						// Increase/decrease positions
-						// If the player is in the way don't move, but don't consider them stopped
 						if (!e.collide(Global.PLAYER_TYPE, e.x + FP.sign(spdx), e.y - s) || enemy_) 
 						{ 
 							e.x += FP.sign(spdx);
 						}
 						
-						// Move up the slope
 						e.y -= s;
-						
-						//we've moved
 						moved = true;
 						
-						// Stop checking for slope (so we don't fly up into the air)
 						break;
 					}
 				}
 				
-				// If we are now in the air, but just above a platform, move us down
 				if (below && !e.collide(Global.SOLID_TYPE,e.x, e.y + 1)) 
 				{ 
 					e.y += 1; 
 				}
 				
-				// If we haven't moved, set our speed_to 0
 				if (!moved) 
 				{ 
 					return false; 
 				}
 			}
 			
-			// Hit nothing!
 			return true;
 		}
 		
@@ -219,14 +193,10 @@ package com.shadow.entities
 		 */
 		public function motiony(e:Entity, spdy:Number):Boolean
 		{
-			// For each pixel that we will move
 			for (var i:int = 0; i < Math.abs(spdy); i ++)
 			{
-				// If we DON'T collide with solid
 				if (!e.collide(Global.SOLID_TYPE, e.x, e.y + FP.sign(spdy))) 
 				{ 
-					// If we don't run into a player, then move us
-					// Note that we wont stop our movement if we hit a player.
 					if (!e.collide(Global.PLAYER_TYPE, e.x, e.y + FP.sign(spdy))) 
 					{ 
 						e.y += FP.sign(spdy); 
@@ -234,12 +204,10 @@ package com.shadow.entities
 				} 
 				else 
 				{ 
-					// Stop movement if we hit a solid
 					return false; 
 				}
 			}
 			
-			// Hit nothing!
 			return true;
 		}
 		
@@ -259,7 +227,6 @@ package com.shadow.entities
 			{
 				motionx(e, speed);
 				
-				// If the player is on top of the thing that's being moved, move him/her too.
 				var p:Physics = e as Physics;
 				if(p != null) 
 				{ 
@@ -284,7 +251,6 @@ package com.shadow.entities
 			{
 				motiony(e, speed);
 				
-				// If the player is on top of the thing that's being moved, move him/her too.
 				var p:Physics = e as Physics;
 				if(p != null) 
 				{ 

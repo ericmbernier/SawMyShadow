@@ -14,6 +14,10 @@ package com.shadow.worlds
 	import punk.transition.effects.*;
 	
 	
+	/**
+	 * 
+	 * @author Eric Bernier <http://www.ericbernier.com>
+	 */
 	public class TransitionWorld extends World
 	{		
 		private var screen_:Image;
@@ -49,7 +53,6 @@ package com.shadow.worlds
 						Transition.to(goto_, 
 							new FlipOut({duration:0.75}), 
 							new FlipIn({duration:0.75}));
-						
 						break;
 					}
 					case Global.TRANSITION_CIRCLE:
@@ -57,7 +60,6 @@ package com.shadow.worlds
 						Transition.to(goto_, 
 							new CircleIn({duration:1}), 
 							new CircleOut({duration:0.5}));
-						
 						break;
 					}
 					case Global.TRANSITION_STAR:
@@ -65,12 +67,13 @@ package com.shadow.worlds
 						Transition.to(goto_, 
 							new StarIn({duration:1}), 
 							new StarOut({duration:0.5}));
-						
 						break;
 					}
 					case Global.TRANSITION_FADE:
 					{
-						
+						Transition.to(goto_,
+							new FadeIn({duration:1}),
+							new FadeOut({duration:0.5}));
 						break;
 					}						
 				}

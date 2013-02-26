@@ -65,7 +65,8 @@
     <tile tx="120" ty="0" x="360" y="330"/>
   </outdoorTileset>
   <entities>
-    <sign x="142" y="396"/>
+    <sign x="142" y="396" text="Run along now.
+A glorious celebration in your honor awaits you!"/>
     <door x="594" y="268"/>
     <tree x="416" y="340"/>
     <flower x="302" y="204"/>
