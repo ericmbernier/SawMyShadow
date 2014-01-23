@@ -9,10 +9,6 @@ package com.shadow.entities
 	import net.flashpunk.utils.Input;
 	
 	
-	/**
-	 *
-	 * @author Eric Bernier
-	 */
 	public class Crate extends Physics
 	{
 		private var sprite:Spritemap = new Spritemap(Assets.OBJECT_CRATE, 32, 32, null);
