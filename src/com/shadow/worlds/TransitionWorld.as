@@ -16,7 +16,7 @@ package com.shadow.worlds
 	
 	/**
 	 * 
-	 * @author Eric Bernier <http://www.ericbernier.com>
+	 * @author Eric Bernier 
 	 */
 	public class TransitionWorld extends World
 	{		
