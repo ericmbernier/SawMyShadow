@@ -7,11 +7,7 @@ package com.shadow.entities
 	import net.flashpunk.Entity;
 	import net.flashpunk.FP;
 	
-	
-	/**
-	 * 
-	 * @author Eric Bernier
-	 */
+
 	public class Physics extends Entity
 	{      
 		public var speed_:Point = new Point(0, 0);			
